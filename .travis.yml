@@ -15,6 +15,7 @@ env:
 
 # Fetch consul for the backend and provider tests
 before_install:
+  - bash scripts/check-dependencies.sh
   - curl -sLo consul.zip https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_amd64.zip
   - unzip consul.zip
   - mkdir -p ~/bin

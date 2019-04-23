@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "bzr trap triggered
+A dependency has been introduced which requires bazaar to be dowloaded.
+
+Including it as a dependency will propagate towards all providers which depend on terraform to also require bzr.
+
+To avoid this effect, please, remove the following dependency from 'go.mod' file, and execute 'go mod tidy'
+
+Trapped args: $@
+" >&2
+
+exit 1
